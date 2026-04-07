@@ -1,0 +1,768 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc; 
+    color: #27374d;
+    margin: 0;
+    padding: 0;
+}
+/* Başlık Alanını İnce Bir Çubuğa Dönüştürdük */
+header {
+    background-color: #a8c3b4;
+    padding: 8px 0; /* İyice incelttik */
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.1rem; /* Yazı artık daha zarif */
+    font-weight: 400;
+}
+
+nav {
+    background-color: #8fae9d;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    position: sticky; /* Sayfayı aşağı kaydırınca tepede kalır */
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+/* Profil Alanı (Fotoğraf ve Metni Ortalar) */
+.profil-alani {
+    display: flex; /* İçeriği esnek yapar */
+    align-items: center; /* Dikeyde ortalar */
+    justify-content: center; /* Yatayda ortalar */
+    gap: 25px; /* Fotoğraf ve metin arası boşluğu biraz azalttık */
+    margin-top: 30px; /* Üstten ferah bir boşluk */
+    margin-bottom: 30px; /* Alttan ferah bir boşluk */
+    text-align: left; /* Metni sola yaslar */
+    width: 100%; /* Tam genişlik kullanır */
+}
+
+/* Profil Fotoğrafı (Daha Kibar ve Daire) */
+.profil-alani img {
+    width: 180px; /* Genişliği 250px'ten 180px'e düşürdük */
+    height: 180px; /* Yüksekliği de aynı yaparak kare kalmasını sağladık */
+    object-fit: cover; /* Fotoğrafın bozulmasını engeller, sığdırır */
+    border-radius: 50%; /* İşte o daire çerçeve sihri! */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Hafif, şık bir gölge */
+    border: 3px solid white; /* Fotoğraf etrafına ince, şık beyaz bir çerçeve */
+}
+
+/* Metin Alanını da Dengeleyelim */
+.profil-metni {
+    max-width: 400px; /* Metnin çok uzayıp dengeyi bozmasını engeller */
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+/* Container'daki gereksiz boşluğu da biraz azaltalım */
+.container {
+    padding: 20px; /* 40px'ten 20px'e düşürdük */
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Randevu Butonu - Daha Kibar Versiyon */
+.randevu-btn {
+   display: inline-flex; /* İkon ve metni düzgün hizalar */
+    align-items: center;
+    justify-content: center;
+    background-color: #27374d; /* Logonun en koyu, belirgin tonu */
+    color: #ffffff !important; /* Yazıyı bembeyaz ve görünür yapar */
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(39, 55, 77, 0.2); /* Hafif derinlik katar */
+}
+
+.randevu-btn i {
+    margin-right: 8px; /* WhatsApp ikonu ile yazı arası boşluk */
+}
+
+.randevu-btn:hover {
+  background-color: #526d82; /* Üzerine gelince biraz açılır */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39, 55, 77, 0.3);
+}
+
+/* Sayfa Altı (Footer) Tasarımı */
+.alt-bilgi {
+    background-color: #f2f8f4;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.sosyal-medya a {
+    color: #8da399;
+    font-size: 24px;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.sosyal-medya a:hover {
+    color: #21455b;
+}
+
+.calisma-alanlari {
+   display: flex;
+    flex-wrap: wrap; /* Kutuların sığmadığında alta geçmesini sağlar */
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+.alan-kutu {
+   background: #ffffff;
+    border: none; /* Kenarlığı kaldırdık */
+    border-top: 4px solid #9db2bf; /* Üst kısma logodan bir renk çizgisi */
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 300px; /* Sabit genişlik kartları daha düzenli gösterir */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Yumuşak bir gölge */
+    transition: all 0.3s ease;
+    text-align: center; /* İçeriği ortalıyoruz */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alan-iceri {
+    display: flex; /* Simge ve metni yan yana getirir */
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.alan-kutu:hover {
+    transform: translateY(-10px); /* Üzerine gelince yukarı zıplar */
+    box-shadow: 0 15px 35px rgba(82, 109, 130, 0.15);
+    background-color: #f8fafc;
+}
+
+.alan-kutu i {
+    font-size: 35px;
+    color: #526d82;
+    background: #f1f5f9;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.alan-kutu h4 {
+    color: #27374d;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.alan-kutu p {
+    color: #526d82;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.yayinlar-alani {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #f9fbf9; /* Hafif farklı bir arka plan */
+    border-radius: 20px;
+}
+
+.yayinlar-alani h3 {
+    color: #2d4035;
+    margin-bottom: 30px;
+}
+
+.yayin-kartlari {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.yayin-kart {
+   border: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.yayin-kart:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.pdf-ikon {
+   color: #526d82; /* PDF kırmızısı yerine kurumsal mavimiz */
+    font-size: 60px;
+}
+
+.yayin-bilgi h5 {
+    color: #2d4035;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.yayin-bilgi span {
+    font-size: 12px;
+    color: #7a8f85;
+    font-weight: bold;
+}
+.surec-konteyner {
+  background-color: #f1f5f9; /* Çok hafif, temiz bir zemin */
+    border-radius: 30px;
+    padding: 60px 20px;
+    margin: 40px auto;
+    max-width: 1100px;
+}
+
+.surec-baslik {
+    color: #2d4035;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+}
+
+.surec-akisi {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Mobilde alt alta gelmesini sağlar */
+}
+
+.surec-adim {
+    flex: 1;
+    max-width: 250px;
+    padding: 20px;
+}
+
+.adim-daire {
+    background-color: #526d82; /* Numara daireleri menüyle uyumlu */
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.surec-ok {
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+    color: #a8c3b4;
+    font-size: 20px;
+}
+
+.surec-adim h4 {
+    color: #27374d;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.surec-adim p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Mobilde okları gizleyelim ki çirkin durmasın */
+@media (max-width: 768px) {
+    .surec-ok { display: none; }
+    .surec-adim { max-width: 100%; }
+}
+
+/* SSS Bölümü Tasarımı */
+.sss-konteyner {
+    margin-top: 60px;
+    padding: 0 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sss-konteyner h3 {
+    color: #2d4035;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+details {
+    background: #fdfdfd;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 1px solid #eef2ef;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+details[open] {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+summary {
+    font-weight: 500;
+    color: #4a6356;
+    list-style: none; /* Varsayılan oku gizler */
+    outline: none;
+}
+
+details p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+/* Beni Takip Edin Bölümü Tasarımı */
+.takip-alani {
+    background-color: #f2f8f4;
+    padding: 50px 20px;
+    margin-top: 60px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.takip-alani h3 {
+    color: #2d4035;
+    margin-bottom: 15px;
+}
+
+.takip-alani p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.takip-butonlari {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.takip-btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 500;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.ig { background: #e1306c; } /* Instagram Rengi */
+.yt { background: #ff0000; } /* YouTube Rengi */
+
+.takip-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+/* Başlık Alanı - Logonun arka plan rengiyle tam uyum */
+header {
+    background-color: #9db2bf; /* Logonun o mavi-gri tonu */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.ana-logo {
+    width: 100%;
+    max-width: 600px; /* Genişliği biraz artırdık ki yanlar daha dolu dursun */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Menü Çubuğu - Yeşil yerine logonun koyu gri tonu */
+nav {
+    background-color: #526d82; /* Logonun yazılarına yakın, güven veren bir mavi-gri */
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: #dde6ed; /* Yazıları çok hafif buz mavisi/beyaz yaptık */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+/* Hakkımda Sayfası Özel Tasarımı */
+.hakkimda-konteyner {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.hakkimda-giris {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hakkimda-giris h1 {
+    color: #27374d; /* Logonun koyu mavisi */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.ozet-metin {
+    font-size: 1.2rem;
+    color: #526d82;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Hikaye Kartı */
+.hikaye-kart {
+    background: #f8fafc;
+    padding: 40px;
+    border-radius: 20px;
+    border-left: 8px solid #9db2bf;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.hikaye-kart h3 {
+    color: #27374d;
+    margin-bottom: 15px;
+}
+
+.hikaye-kart p {
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Deneyim ve Eğitim Akış Tasarımı */
+.akıs-konteyner {
+    max-width: 850px; /* İçeriği merkezde tutarak zarafet sağlar */
+    margin: 40px auto;
+}
+
+.hakkimda-bolum {
+   margin-bottom: 100px; /* 60px olan değeri 100px yaparak daha fazla nefes almasını sağladık */
+    padding: 0 20px;
+}
+
+.bolum-baslik-alani {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f1f5f9; /* Alt çizgiyi biraz daha belirginleştirdik */
+}
+
+.bolum-baslik-alani i {
+    color: #526d82;
+    font-size: 22px;
+}
+
+.bolum-baslik-alani h3 {
+    color: #27374d;
+    font-size: 1.6rem;
+    margin: 0;
+    font-family: 'Georgia', serif;
+}
+
+/* Son deneyim maddesinin altındaki boşluğu netleştirelim */
+.deneyim-listesi {
+    padding-bottom: 40px; /* Çizelgenin bittiği yere bir pay bıraktık */
+}
+
+.deneyim-item:last-child {
+    margin-bottom: 0; /* Son madde sonrası boşluğu kapatır */
+}
+
+/* Sayfanın genel ferahlığı için konteynır genişliğini koru */
+.akıs-konteyner {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+/* Çizgi üzerindeki halka noktalar */
+.deneyim-item::before {
+    content: "";
+    position: absolute;
+    left: -46px; /* Çizgiyle tam hizalama */
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    border: 3px solid #9db2bf;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.tarih {
+    font-size: 13px;
+    color: #9db2bf;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.detay h4 {
+    color: #27374d;
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+}
+
+.detay p {
+    color: #526d82;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Sertifika Rozetleri */
+.sertifika-grubu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sertifika-rozet {
+    background-color: #f8fafc;
+    color: #526d82;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 14px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.sertifika-rozet:hover {
+    background-color: #526d82;
+    color: white;
+    border-color: #526d82;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(82, 109, 130, 0.15);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 600px) {
+    .bolum-baslik-alani h3 { font-size: 1.3rem; }
+    .deneyim-listesi { padding-left: 25px; }
+}
+
+/* Uzmanlık Alanları Yan Yana Dizilim */
+.alan-izgara {
+    display: flex; /* Esnek kutu yapısı */
+    justify-content: space-between; /* Aralarında eşit boşluk bırak */
+    gap: 20px; /* Kartlar arası mesafe */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.uzmanlik-kart {
+    flex: 1; /* Tüm kartların eşit genişlikte olmasını sağlar */
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+    min-width: 300px; /* Kartların çok fazla daralmasını engeller */
+}
+
+.uzmanlik-kart:hover {
+    transform: translateY(-10px);
+    border-color: #9db2bf;
+    box-shadow: 0 15px 30px rgba(82, 109, 130, 0.1);
+}
+
+/* Mobilde (Telefonlarda) Alt Alta Geçmesi İçin */
+@media (max-width: 992px) {
+    .alan-izgara {
+        flex-direction: column; /* Tablet ve mobilde alt alta diz */
+        align-items: center;
+    }
+    
+    .uzmanlik-kart {
+        width: 100%; /* Mobilde tam genişlik */
+        max-width: 500px;
+    }
+}
+
+/* İkon ve Metin Stilleri (Öncekiyle uyumlu) */
+.kart-ust {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 10px;
+}
+
+.kart-ust i {
+    font-size: 26px;
+    color: #526d82;
+}
+
+.uzmanlik-kart ul {
+    list-style: none;
+    padding: 0;
+}
+
+.uzmanlik-kart ul li {
+    font-size: 14px;
+    color: #526d82;
+    padding: 8px 0;
+    line-height: 1.4;
+}
+/* Hizmetler Sayfası Modern Tasarımı */
+.hizmetler-sayfa-konteyner {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.hizmetler-ust-alan {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.hizmetler-ust-alan h1 {
+    color: #27374d;
+    font-size: 2.8rem;
+    font-family: 'Georgia', serif;
+}
+
+.hizmetler-ust-alan p {
+    color: #526d82;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+/* Kart Tasarımı */
+.hizmet-izgarasi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.hizmet-kart-premium {
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 40px 30px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: all 0.4s ease;
+}
+
+.hizmet-kart-premium:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(39, 55, 77, 0.1);
+    border-color: #9db2bf;
+}
+
+.hizmet-ikon-cerceve {
+    width: 90px;
+    height: 90px;
+    background: #f8fafc;
+    color: #526d82;
+    font-size: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    border: 1px solid #dde6ed;
+}
+
+.hizmet-kart-premium h3 {
+    color: #27374d;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.hizmet-kart-premium p {
+    color: #526d82;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Kart İçi Mini Liste */
+.hizmet-liste-mini {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+}
+
+.hizmet-liste-mini li {
+    font-size: 13px;
+    color: #27374d;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hizmet-liste-mini li i {
+    color: #9db2bf;
+    font-size: 12px;
+}
+
+.hizmet-ikon-cerceve i {
+    color: #526d82 !important; /* Logonun denim mavisi */
+    display: block !important;
+    font-size: 32px;
+}
+
+/* Alttaki Çağrı Kutusu */
+.hizmet-aksiyon-kutusu {
+    margin-top: 100px;
+    background-color: #27374d;
+    padding: 50px;
+    border-radius: 30px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.randevu-btn-v2 {
+    display: inline-block;
+    background: #ffffff;
+    color: #27374d;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.randevu-btn-v2:hover {
+    background: #9db2bf;
+    color: white;
+}

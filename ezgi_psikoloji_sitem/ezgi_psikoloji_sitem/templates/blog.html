@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog | Psikolojik Danışmanlık</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Psikolojik Danışmanlık ve Sanat Terapisi</h1>
+    </header>
+
+    <nav>
+        <a href="/">Ana Sayfa</a>
+        <a href="/hakkimda">Hakkımda & Deneyimler</a>
+        <a href="/hizmetler">Hizmetlerim</a>
+        <a href="/seminerler">Seminerler</a>
+        <a href="/blog">Blog</a>
+    </nav>
+
+    <div class="container">
+        <button onclick="pdfIndir()" style="background-color: #8da399; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; float: right;">📄 Bu Yazıyı PDF Olarak İndir</button>
+
+        <div style="clear: both; margin-bottom: 30px;"></div>
+
+        <div id="blog-yazisi" style="text-align: left; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+            <h2 style="color: #2d4035;">Sanat Terapisi ve Bibliyoterapi ile İçsel Yolculuk</h2>
+            <p><em>Yazar: Psikolojik Danışman | Tarih: Nisan 2026</em></p>
+            <hr>
+            <p>Kelimelerin tıkandığı, duyguların ifade edilemediği anlarda sanat terapisi ve kitapların iyileştirici gücü (bibliyoterapi) devreye girer. Bazen okuduğumuz bir karakterin hikayesi, kendi iç dünyamızdaki kilitli kapıları aralamamıza yardımcı olur.</p>
+            <p>Özellikle 18-25 yaş arası genç yetişkinlik döneminde, kimlik inşası ve gelecek kaygısıyla başa çıkarken dışavurumcu sanat etkinlikleri, bireyin kendi potansiyelini keşfetmesi için eşsiz bir güvenli alan sunar. Renkler, çizgiler ve metaforlar, bilinçaltımızın en şeffaf dilidir.</p>
+        </div>
+    </div>
+
+    <script>
+        function pdfIndir() {
+            // Sadece blog-yazisi isimli kutunun içini almasını söylüyoruz
+            var yaziAlani = document.getElementById('blog-yazisi');
+            
+            var ayarlar = {
+                margin:       10,
+                filename:     'Psikoloji_Blog_Yazisi.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // PDF'i oluştur ve indir
+            html2pdf().set(ayarlar).from(yaziAlani).save();
+        }
+    </script>
+
+</body>
+</html>

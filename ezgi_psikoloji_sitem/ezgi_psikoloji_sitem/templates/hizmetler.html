@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hizmetlerim | Psikolojik Danışmanlık</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+    <header>
+    <div class="logo-konteyner">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Psikolog Ezgi Yıldırım Logo" class="ana-logo">
+    </div>
+</header>
+
+    <nav>
+        <a href="/">Ana Sayfa</a>
+        <a href="/hakkimda">Deneyimler</a>
+        <a href="/hizmetler">Hizmetlerim</a>
+        <a href="/seminerler">Seminerler</a>
+        <a href="/blog">Blog</a>
+    </nav>
+
+    <div class="hizmetler-sayfa-konteyner">
+    <div class="hizmetler-ust-alan">
+        <h1>Danışmanlık Hizmetlerim</h1>
+        <p>Bireysel potansiyelinizi keşfetmeniz ve yaşam kalitenizi artırmanız için bilimsel temelli, etik ve şefkatli bir yol arkadaşlığı sunuyorum.</p>
+    </div>
+
+    <div class="hizmet-izgarasi">
+        <div class="hizmet-kart-premium">
+            <div class="hizmet-ikon-cerceve"><i class="fa-solid fa-child-reaching"></i></div>
+            <h3>Çocuk ve Ergen Danışmanlığı</h3>
+            <p>Gelişimsel süreçler, sınav kaygısı ve duygusal düzenleme. Oyun ve masal terapisiyle çocukların dünyasına kapı aralıyoruz.</p>
+            <ul class="hizmet-liste-mini">
+                <li><i class="fa-solid fa-check"></i> Otizm Spektrum Desteği</li>
+                <li><i class="fa-solid fa-check"></i> Sosyal Beceri Gelişimi</li>
+                <li><i class="fa-solid fa-check"></i> Özgül Öğrenme Güçlüğü</li>
+                <li><i class="fa-solid fa-check"></i> Zihinsel Yeti Yetersizliği</li>
+                <li><i class="fa-solid fa-check"></i> Akran Zorbalığı</li>
+                <li><i class="fa-solid fa-check"></i> Kardeş Kıskançlığı</li>
+                <li><i class="fa-solid fa-check"></i> Kaygı ve Depresyon</li>
+                <li><i class="fa-solid fa-check"></i> Travma ve Yas</li>
+                <li><i class="fa-solid fa-check"></i> Özgüven Eksikliği</li>
+                <li><i class="fa-solid fa-check"></i> Kimlik Bunalımı ve Bağımsızlaşma Çatışmaları</li>
+                <li><i class="fa-solid fa-check"></i> Sosyal Becerilerin Kazanılması ve Sosyal Uyum Süreçlerinde Psikososyal Destek</li>
+            </ul>
+        </div>
+
+        <div class="hizmet-kart-premium">
+            <div class="hizmet-ikon-cerceve"><i class="fa-solid fa-user-check"></i></div>
+            <h3>Yetişkin Danışmanlığı</h3>
+            <p>Kaygı, stres ve yaşam krizleriyle baş etme. Bilişsel Davranışçı Terapi (BDT) ve Mindfulness ile kalıcı iyileşme.</p>
+            <ul class="hizmet-liste-mini">
+                <li><i class="fa-solid fa-check"></i> Kaygı ve Stres Yönetimi</li>
+                <li><i class="fa-solid fa-check"></i> Özgüven ve Özşefkat Eksikliği</li>
+                <li><i class="fa-solid fa-check"></i> Depresyon</li>
+                <li><i class="fa-solid fa-check"></i> Travma ve Yas</li>
+                <li><i class="fa-solid fa-check"></i> Duygu Düzenleme</li>
+                <li><i class="fa-solid fa-check"></i> Partner Arası İlişki Sorunları</li>
+                <li><i class="fa-solid fa-check"></i> Sınır Koyma Güçlüğü</li>
+                <li><i class="fa-solid fa-check"></i> Tükenmişlik Sendromu</li>
+                <li><i class="fa-solid fa-check"></i> Erteleme Davranışı</li>
+            </ul>
+        </div>
+
+        <div class="hizmet-kart-premium">
+            <div class="hizmet-ikon-cerceve"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h3>Aile ve Çift Danışmanlığı</h3>
+            <p>İlişkilerdeki düğümleri çözmek ve sağlıklı iletişim kanalları inşa etmek için profesyonel rehberlik ve sistemik yaklaşım.</p>
+            <ul class="hizmet-liste-mini">
+                <li><i class="fa-solid fa-check"></i> İletişim Çatışmaları</li>
+                <li><i class="fa-solid fa-check"></i> Kadınlara Cinsel Terapi Desteği</li>
+                <li><i class="fa-solid fa-check"></i> Güven Sorunları</li>
+                <li><i class="fa-solid fa-check"></i> Güç ve Kontrol Dengesi</li>
+                <li><i class="fa-solid fa-check"></i> Yeni Evlilik ve Uyum Süreci</li>
+                <li><i class="fa-solid fa-check"></i> Boş Yuva Sendromu</li>
+                <li><i class="fa-solid fa-check"></i> Ebeveynlik Tutumları</li>
+                <li><i class="fa-solid fa-check"></i> Çocuk ve Ergen Odaklı Çatışmalar</li>
+                <li><i class="fa-solid fa-check"></i> Şiddet ve İstismar</li>
+            </ul>
+        </div>
+
+        <div class="hizmet-kart-premium">
+            <div class="hizmet-ikon-cerceve"><i class="fa-solid fa-palette"></i></div>
+            <h3>Sanat Terapisi Atölyeleri</h3>
+            <p>Kelimelerin yetmediği yerde sanatın iyileştirici gücü. Dışavurumcu tekniklerle içsel bir keşif ve sağaltım yolculuğu.</p>
+            <ul class="hizmet-liste-mini">
+                <li><i class="fa-solid fa-check"></i> Yaratıcı Dışavurum</li>
+                <li><i class="fa-solid fa-check"></i> Bireysel Dışavurumcu Sanat Terapisi</li>
+                <li><i class="fa-solid fa-check"></i> Duygu Farkındalıklı Atölye Çalışmaları</li>
+                <li><i class="fa-solid fa-check"></i> Grup Atölye Çalışmaları</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="hizmet-aksiyon-kutusu">
+        <h3>Size Nasıl Yardımcı Olabilirim?</h3>
+        <p>Sürecin işleyişi hakkında bilgi almak ve size en uygun çalışma yöntemini belirlemek için benimle iletişime geçebilirsiniz.</p>
+        <a href="https://wa.me/905528225474" class="randevu-btn-v2">WhatsApp ile Bilgi Al</a>
+    </div>
+</div>
+
+</body>
+</html>
