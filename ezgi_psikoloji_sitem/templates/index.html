@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <meta charset="UTF-8">
     <title>Psikolog Ezgi Yıldırım | Ana Sayfa</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -163,5 +164,17 @@
         <p>© 2026 Psikolog Ezgi Yıldırım - Tüm Hakları Saklıdır.</p>
     </div>
 </footer>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
