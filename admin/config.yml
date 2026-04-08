@@ -17,3 +17,5 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "PDF Dosyası", name: "pdf_file", widget: "file", required: false}
+      - {label: "Özet Metin", name: "description", widget: "string", required: false}
