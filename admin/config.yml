@@ -14,8 +14,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "PDF Dosyası", name: "pdf_file", widget: "file", required: false}
-      - {label: "Özet Metin", name: "description", widget: "string", required: false}
+      - {label: "Başlık", name: "title", widget: "string"}
+      - {label: "Yayınlanma Tarihi", name: "date", widget: "datetime"}
+      - {label: "PDF Dosyası Seç", name: "pdf_file", widget: "file", required: false}
+      - {label: "Yazı İçeriği (Opsiyonel)", name: "body", widget: "markdown", required: false}
