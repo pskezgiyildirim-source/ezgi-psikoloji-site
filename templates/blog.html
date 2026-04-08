@@ -51,6 +51,14 @@
             html2pdf().set(ayarlar).from(yaziAlani).save();
         }
     </script>
-
+    
+{% if pdf_file %}
+  <div class="pdf-link" style="margin-top: 20px;">
+    <a href="{{ pdf_file }}" class="btn btn-primary" target="_blank">
+      📄 Yazıyı PDF Olarak Görüntüle / İndir
+    </a>
+  </div>
+{% endif %}
+    
 </body>
 </html>
